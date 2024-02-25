@@ -37,7 +37,7 @@ import { DaysButton } from '../../style/classNames'
 
 const Calendar = (props: CalendarProps, ref: ForwardedRef<HTMLDivElement>) => {
   const { locale } = localeCache
-  const { defaultValue, weekends, range = false } = props
+  const { defaultValue, weekends, maxDate, range = false } = props
   const startDate = defaultValue === undefined ? new Date() : defaultValue
   // memo
   const getAllDays = useMemo(() => getDays(defaultValue), [])
@@ -122,7 +122,7 @@ const Calendar = (props: CalendarProps, ref: ForwardedRef<HTMLDivElement>) => {
                         key={day.date.getTime()}
                         className={DaysButton}
                         data-value={day.date}
-                        data-disabled={day.disabled}
+                        data-disabled={day.disabled || maxDate && maxDate < day.date}
                         data-range={props.range}
                         data-selected={!range && sameDay(startDate, day.date)}
                         data-start-range={

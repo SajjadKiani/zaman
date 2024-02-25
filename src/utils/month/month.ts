@@ -1,7 +1,7 @@
 import dayjs from 'dayjs'
 import 'dayjs/locale/fa'
 import weekday from 'dayjs/plugin/weekday'
-import LocalizedFormat from 'dayjs/plugin/LocalizedFormat'
+import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 import { getDayOfMonth } from '../dateTimeFormat/dateTimeFormat'
 import { sameMonth } from '../dateHelper/dateHelper'
 import formatDate from '../format'

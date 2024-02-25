@@ -9,6 +9,7 @@ export interface CalendarBaseProps {
   defaultValue?: Date
   weekends?: DaysRange[]
   className?: string
+  maxDate?: Date
 }
 export interface CalendarRangeProps {
   range: true
